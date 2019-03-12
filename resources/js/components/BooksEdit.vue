@@ -35,7 +35,7 @@
 					<small>Tags are saved on the spot!</small>
 					<div v-if = "book">
 						<span v-for = "tag in book.tags" :title ="tag.description"  class="badge badge-warning">
-							{{ tag.name }} <button class="btn btn-sm " @click="removeTag( tag.id )" type=button>x</button>
+							{{ tag.name }} <button class="btn btn-sm btn-danger " @click="removeTag( tag.id )" type=button>x</button>
 						</span>
 					</div>
 

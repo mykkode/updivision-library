@@ -72,7 +72,7 @@ class BookController extends Controller
     }
     public function delete($id) {
     	$book = Book::find($id);
-    	if($book){
+        if($book){
     		Book::destroy($id);
     	}
     }

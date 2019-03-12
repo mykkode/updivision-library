@@ -38181,7 +38181,7 @@ var render = function() {
                             _c(
                               "button",
                               {
-                                staticClass: "btn btn-sm ",
+                                staticClass: "btn btn-sm btn-danger ",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function($event) {
