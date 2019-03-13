@@ -37,7 +37,7 @@ class TagController extends Controller
     public function edit($id) {
         $tag = Tag::find($id);
         if ($tag){
-            return view ('tagEdit',['id' => $tag->id,
+            return view ('tagsEdit',['id' => $tag->id,
                 'name' => $tag->name,
                 'description' => $tag->description]);
         }
@@ -54,6 +54,6 @@ class TagController extends Controller
         $tag->description = $request->input('tag_description');
         $tag->save();
 
-        return redirect('tag');
+        return redirect('tags');
     }
 }
