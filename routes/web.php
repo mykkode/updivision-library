@@ -19,20 +19,36 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/authors/add', 'AuthorController@add');
-Route::get('/authors/{id}/edit', 'AuthorController@edit');
-Route::get('/authors/list', 'AuthorController@list');
-Route::get('/authors', 'AuthorController@index')->name('authors');
+Route::prefix('authors')->group(function () {
+    Route::get('/add', 'AuthorController@add');
+	Route::get('/{id}/edit', 'AuthorController@edit');
+	Route::get('/list', 'AuthorController@list');
+	Route::get('/', 'AuthorController@index')->name('authors');
 
-Route::post('/authors/store', 'AuthorController@store');
-Route::post('/authors/{id}/alter', 'AuthorController@alter');
-Route::post('/authors/{id}/delete', 'AuthorController@delete');
+	Route::post('/store', 'AuthorController@store');
+	Route::post('/{id}/alter', 'AuthorController@alter');
+	Route::post('/{id}/delete', 'AuthorController@delete');
+});
 
-Route::get('/tags/add', 'TagController@add');
-Route::get('/tags/{id}/edit', 'TagController@edit');
-Route::get('/tags/list', 'TagController@list');
-Route::get('/tags', 'TagController@index')->name('tags');
 
-Route::post('/tags/store', 'TagController@store');
-Route::post('/tags/{id}/alter', 'TagController@alter');
-Route::post('/tags/{id}/delete', 'TagController@delete');
+Route::prefix('tags')->group(function () {
+	Route::get('/add', 'TagController@add');
+	Route::get('/{id}/edit', 'TagController@edit');
+	Route::get('/list', 'TagController@list');
+	Route::get('/', 'TagController@index')->name('tags');
+
+	Route::post('/store', 'TagController@store');
+	Route::post('/{id}/alter', 'TagController@alter');
+	Route::post('/{id}/delete', 'TagController@delete');
+});
+
+Route::prefix('books')->group(function () {
+	Route::get('/add', 'BookController@add');
+	Route::get('/{id}/edit', 'BookController@edit');
+	Route::get('/list', 'BookController@list');
+	Route::get('/', 'BookController@index')->name('tags');
+
+	Route::post('/store', 'BookController@store');
+	Route::post('/{id}/alter', 'BookController@alter');
+	Route::post('/{id}/delete', 'BookController@delete');
+});
