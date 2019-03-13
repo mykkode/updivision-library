@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/authors/{id}/edit', 'AuthorController@edit');
+Route::post('/authors/{id}/delete', 'AuthorController@delete');
+Route::get('/authors/add', 'AuthorController@add');
+Route::get('/authors/list', 'AuthorController@list');
+Route::get('/authors', 'AuthorController@index')->name('authors');
