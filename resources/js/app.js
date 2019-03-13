@@ -23,6 +23,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('authors-table', require('./components/AuthorsTable.vue').default);
 Vue.component('authors-add', require('./components/AuthorsAdd.vue').default);
+Vue.component('authors-edit', require('./components/AuthorsEdit.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

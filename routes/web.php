@@ -19,12 +19,12 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/authors/{id}/edit', 'AuthorController@edit');
 Route::get('/authors/add', 'AuthorController@add');
+Route::get('/authors/{id}/edit', 'AuthorController@edit');
 Route::get('/authors/list', 'AuthorController@list');
 Route::get('/authors', 'AuthorController@index')->name('authors');
 
 Route::post('/authors/store', 'AuthorController@store');
-Route::post('/authors/alter', 'AuthorController@alter');
+Route::post('/authors/{id}/alter', 'AuthorController@alter');
 Route::post('/authors/{id}/delete', 'AuthorController@delete');
 

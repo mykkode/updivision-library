@@ -34,10 +34,26 @@ class AuthorController extends Controller
     		Author::destroy($id);
     	}
     }
-    public function edit() {
-    	return view ('authorsEdit');
+    public function edit($id) {
+        $author = Author::find($id);
+        if ($author){
+            return view ('authorsEdit',['id' => $author->id,
+                'name' => $author->name,
+                'description' => $author->description]);
+        }
+    	
     }
-    public function alter() {
-            
+    public function alter(Request $request, $id) {
+        $validatedData = $request->validate([
+            'author_name' => 'required',
+            'author_description' => 'required',
+        ]);
+
+        $author = Author::find($id);
+        $author->name = $request->input('author_name');
+        $author->description = $request->input('author_description');
+        $author->save();
+
+        return redirect('authors');
     }
 }
