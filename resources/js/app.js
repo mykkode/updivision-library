@@ -20,10 +20,13 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('authors-table', require('./components/AuthorsTable.vue').default);
 Vue.component('authors-add', require('./components/AuthorsAdd.vue').default);
 Vue.component('authors-edit', require('./components/AuthorsEdit.vue').default);
+
+Vue.component('tags-table', require('./components/TagsTable.vue').default);
+Vue.component('tags-add', require('./components/TagsAdd.vue').default);
+Vue.component('tags-edit', require('./components/TagsEdit.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

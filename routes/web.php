@@ -28,3 +28,11 @@ Route::post('/authors/store', 'AuthorController@store');
 Route::post('/authors/{id}/alter', 'AuthorController@alter');
 Route::post('/authors/{id}/delete', 'AuthorController@delete');
 
+Route::get('/tags/add', 'TagController@add');
+Route::get('/tags/{id}/edit', 'TagController@edit');
+Route::get('/tags/list', 'TagController@list');
+Route::get('/tags', 'TagController@index')->name('tags');
+
+Route::post('/tags/store', 'TagController@store');
+Route::post('/tags/{id}/alter', 'TagController@alter');
+Route::post('/tags/{id}/delete', 'TagController@delete');
