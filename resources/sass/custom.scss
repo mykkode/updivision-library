@@ -1,8 +1,19 @@
 .wrapper {
 	h3 {
 		display: inline;
+
+		div {
+			display:inherit;
+		}
 	}
 	.btn {
 	    margin-bottom:15px;
 	}
 }
+
+td, div{
+	span {
+		margin-right:5px;
+	}
+}
+

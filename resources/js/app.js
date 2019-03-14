@@ -27,6 +27,10 @@ Vue.component('authors-edit', require('./components/AuthorsEdit.vue').default);
 Vue.component('tags-table', require('./components/TagsTable.vue').default);
 Vue.component('tags-add', require('./components/TagsAdd.vue').default);
 Vue.component('tags-edit', require('./components/TagsEdit.vue').default);
+
+Vue.component('books-table', require('./components/BooksTable.vue').default);
+Vue.component('books-add', require('./components/BooksAdd.vue').default);
+Vue.component('books-edit', require('./components/BooksEdit.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -45,8 +45,10 @@ Route::prefix('tags')->group(function () {
 Route::prefix('books')->group(function () {
 	Route::get('/add', 'BookController@add');
 	Route::get('/{id}/edit', 'BookController@edit');
-	Route::get('/list', 'BookController@list');
-	Route::get('/', 'BookController@index')->name('tags');
+	Route::get('/list/{id?}', 'BookController@list');
+	Route::get('/bind/{book_id}/{tag_id}', 'BookController@bind');
+	Route::get('/unbind/{book_id}/{tag_id}', 'BookController@unbind');
+	Route::get('/', 'BookController@index')->name('books');
 
 	Route::post('/store', 'BookController@store');
 	Route::post('/{id}/alter', 'BookController@alter');

@@ -2,7 +2,16 @@
   display: inline;
 }
 
+.wrapper h3 div {
+  display: inherit;
+}
+
 .wrapper .btn {
   margin-bottom: 15px;
+}
+
+td span,
+div span {
+  margin-right: 5px;
 }
 
