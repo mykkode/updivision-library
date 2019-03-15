@@ -20,3 +20,17 @@ td, div{
 .btn-sm	 {
 	padding:0rem 0.3rem;
 }
+
+body, html{
+ display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+  
+#wrapper {
+	 flex-grow: 1
+}
+
+footer {
+
+}

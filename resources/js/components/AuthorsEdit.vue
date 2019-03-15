@@ -1,39 +1,48 @@
 <template>
-<div>
-		<div class="container-fluid">
-			<div class='wrapper'>
-				<h3> Edit Author: {{ name }} ({{ id }}) </h3>
-				<a class="btn btn-primary btn-sm" v-bind:href="'/authors'">See all authors</a>
-	  		</div>
-  		</div>
-		<div>
-			<form :action="'/authors/'+id+'/alter'" method="POST">
-				<input type="hidden" name="_token" :value="token_value">
-				<!-- <input type="hidden" name="_token" value="57bZor8XBdKGxQjjgnKJvxmUHu2WKqlWp4Z6bmkb"> -->
-				<div class="form-group">
-					<label for="author_name">Name</label>
-					<input type="text" name = "author_name" class="form-control" placeholder="Enter Name" :value = "name">
-					<div v-if = "errors.author_name" >
-						<small v-for = "error_message in errors.author_name" id="passwordHelpBlock" class="form-text text-danger">
-							{{ error_message }}
-						</small>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="author_description">Description</label>
-					<textarea type="text" name = "author_description" class="form-control"placeholder="Enter Description" rows="10" :value = "description"></textarea>
-					<div v-if = "errors.author_description" >
-						<small v-for = "error_message in errors.author_description" id="passwordHelpBlock" class="form-text text-danger">
-							{{ error_message }}
-						</small>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-			</div>
-	</div>
-</template>
+		<div class="tile is-parent">
+        <article class="tile is-child is-info is-11">
+		<h2 class="title is-2">Edit Author: {{ name }} ({{ id }})</h2>
+		<div class = "content">
+			<a class="button is-success" v-bind:href="'/authors/'">See all authors</a>
+		</div>
+		<form :action="'/authors/'+id+'/alter'" method="POST">
+			<input type="hidden" name="_token" :value="token_value">
 
+			<div class="field">
+		        <label class="label">Name</label>
+		        <div class="control has-icons-left">
+		            <input id="author_name" name="author_name" class="input" type="text" placeholder="Author Name" :value = "name" required>
+		            <span class="icon is-small is-left">
+		                <i class="fas fa-user"></i>
+		            </span>
+		        </div>
+		        <div v-if = "errors.author_name" >
+					<p class="help is-danger" v-for = "error_message in errors.author_name">
+						{{ error_message }}
+					</p>
+				</div>
+		    </div>
+		    <div class="field">
+		        <label class="label">Description</label>
+		        <div class="control">
+		            <textarea id="author_name" name = "author_description" class="textarea" type="text" placeholder="Author Description" rows="10" :value = "description" required></textarea>
+		        </div>
+		        <div v-if = "errors.author_description" >
+					<p class="help is-danger" v-for = "error_message in errors.author_description">
+						{{ error_message }}
+					</p>
+				</div>
+			</div>
+
+			    <div class="field is-grouped">
+			        <div class="control">
+			            <button type="submit" class="button is-link">Submit</button>
+			        </div>
+			    </div>
+		</form>
+	</article>
+</div>
+</template>
 <script>
 	export default {
 		props: ['token_value', 'errors_string', 'id', 'name', 'description'],

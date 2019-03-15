@@ -1,43 +1,55 @@
 <template>
 <div>
-	<div class="container-fluid">
-		<div class='wrapper'>
-			<h3> Books </h3>
-			<button class="btn btn-primary btn-sm" @click ="refresh()"><i class="fas  fa-refresh"></i>Reload Data</button>
-			<a class="btn btn-primary btn-sm" v-bind:href="'/books/add'">Add new</a>
-  		</div>
-  	</div>
+	<div class="tile is-parent">
+        <article class="tile is-child is-info is-11">
+		<h2 class="title is-2">Books</h2>
+
 	  	<div v-if = "loading" >
 	  		LOADING
 	  	</div>
-		<div v-else class="table-responsive">
-	    <table class="table">
-		  <thead>
-		    <tr>
-		      <th scope="col">Cover</th>
-		      <th scope="col">Title</th>
-		      <th scope="col">Author</th>
-		      <th scope="col">Tags</th>
-		      <th scope="col">Description</th>
-		      <th scope="col">Action</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr v-for = "book in books">
-		      <td>TODO</td>
-		      <td>{{ book.name }}</td>
-			  <td><span :title ="book.author.description" v-if="book.author" class="badge badge-info">{{ book.author.name }}</span></td>
-			  <td><span :title ="tag.description" v-for = "tag in book.tags" class="badge badge-warning">{{ tag.name }}</span></td>
-			  <td>{{ book.description }}</td>
-			  <td>
-			  	<button class="btn brn-primary btn-sm" @click ="delete_book(book.id)"><i class="fas fa-trash"></i></button>
-			  	<a class="btn btn-sm" v-bind:href="'/books/'+book.id+'/edit'"><i class="fas fa-edit"></i></a>
-			  </td>
-
-		    </tr>
-		  </tbody>
-		</table>
-	</div>
+		<div v-else>
+			<div class = "content">
+				<a class="button is-primary" @click ="refresh()"><i class="fas fa-refresh"></i>Reload Data</a>
+				<a class="button is-success" v-bind:href="'/books/add'">Add new</a>
+			</div>
+			<table class="table table is-fullwidth">
+			  <thead>
+			    <tr>
+					<th scope="col">Cover</th>
+					<th scope="col">Title</th>
+					<th scope="col">Author</th>
+					<th scope="col">Tags</th>
+					<th scope="col">Description</th>
+					<th scope="col">Action</th>
+			    </tr>
+			  </thead>
+			  <tfoot>
+				<tr v-for = "book in books">
+				  <td>TODO</td>
+			      <td>{{ book.name }}</td>
+				  <td>
+					  <span v-if="book.author" :title="book.author.description" class="tag is-primary">{{ book.author.name }}</span>
+				  </td>
+				  <td><span v-for="tag in book.tags" :title="tag.description" class="tag is-warning">{{ tag.name }}</span></td>
+				  <td>{{ book.description }}</td>
+				  <td>
+				  	<a class="button" @click ="delete_book(book.id)">
+					    <span class="icon is-small">
+					      <i class="fas fa-trash"></i>
+					    </span>
+					</a>
+					<a class="button" v-bind:href="'/books/'+book.id+'/edit'">
+						<span class="icon is-small">
+					  		<i class="fas fa-edit"></i>
+						</span>
+					</a>
+				  </td>
+		      </tr>
+			  </tfoot>
+			</table>
+		</div>
+		        </article>
+      </div>
 </div>
 </template>
 

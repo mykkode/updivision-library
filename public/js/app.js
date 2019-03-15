@@ -1801,6 +1801,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token_value', 'errors_string'],
@@ -1822,6 +1832,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1880,6 +1899,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2009,6 +2039,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token_value', 'errors_string'],
@@ -2043,6 +2092,39 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2217,6 +2299,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2266,6 +2360,18 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2359,6 +2465,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token_value', 'errors_string', 'id', 'name', 'description'],
   data: function data() {
@@ -2381,6 +2498,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37498,114 +37626,124 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [_vm._v(" Add Author ")]),
-        _vm._v(" "),
+  return _c("div", { staticClass: "tile is-parent" }, [
+    _c("article", { staticClass: "tile is-child is-info is-11" }, [
+      _c("h2", { staticClass: "title is-2" }, [_vm._v("Add Author")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
         _c(
           "a",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            attrs: { href: "/authors" }
-          },
+          { staticClass: "button is-success", attrs: { href: "/authors/" } },
           [_vm._v("See all authors")]
         )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", [
+      ]),
+      _vm._v(" "),
       _c("form", { attrs: { action: "/authors/store", method: "POST" } }, [
         _c("input", {
           attrs: { type: "hidden", name: "_token" },
           domProps: { value: _vm.token_value }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "author_name" } }, [_vm._v("Name")]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Name")]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "author_name",
-              placeholder: "Enter Name"
-            }
-          }),
+          _vm._m(0),
           _vm._v(" "),
           _vm.errors.author_name
             ? _c(
                 "div",
                 _vm._l(_vm.errors.author_name, function(error_message) {
-                  return _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-danger",
-                      attrs: { id: "passwordHelpBlock" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
-                          _vm._s(error_message) +
-                          "\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
+                  return _c("p", { staticClass: "help is-danger" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" + _vm._s(error_message) + "\n\t\t\t\t\t"
+                    )
+                  ])
                 }),
                 0
               )
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "author_description" } }, [
-            _vm._v("Description")
-          ]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Description")]),
           _vm._v(" "),
-          _c("textarea", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "author_description",
-              placeholder: "Enter Description",
-              rows: "10"
-            }
-          }),
+          _vm._m(1),
           _vm._v(" "),
           _vm.errors.author_description
             ? _c(
                 "div",
                 _vm._l(_vm.errors.author_description, function(error_message) {
-                  return _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-danger",
-                      attrs: { id: "passwordHelpBlock" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
-                          _vm._s(error_message) +
-                          "\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
+                  return _c("p", { staticClass: "help is-danger" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" + _vm._s(error_message) + "\n\t\t\t\t\t"
+                    )
+                  ])
                 }),
                 0
               )
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Submit")]
-        )
+        _vm._m(2)
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control has-icons-left" }, [
+      _c("input", {
+        staticClass: "input",
+        attrs: {
+          id: "author_name",
+          name: "author_name",
+          type: "text",
+          placeholder: "Author Name",
+          required: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "icon is-small is-left" }, [
+        _c("i", { staticClass: "fas fa-user" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control" }, [
+      _c("textarea", {
+        staticClass: "textarea",
+        attrs: {
+          id: "author_name",
+          name: "author_description",
+          type: "text",
+          placeholder: "Author Description",
+          rows: "10",
+          required: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c(
+          "button",
+          { staticClass: "button is-link", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37627,27 +37765,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [
-          _vm._v(
-            " Edit Author: " + _vm._s(_vm.name) + " (" + _vm._s(_vm.id) + ") "
-          )
-        ]),
-        _vm._v(" "),
+  return _c("div", { staticClass: "tile is-parent" }, [
+    _c("article", { staticClass: "tile is-child is-info is-11" }, [
+      _c("h2", { staticClass: "title is-2" }, [
+        _vm._v("Edit Author: " + _vm._s(_vm.name) + " (" + _vm._s(_vm.id) + ")")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
         _c(
           "a",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            attrs: { href: "/authors" }
-          },
+          { staticClass: "button is-success", attrs: { href: "/authors/" } },
           [_vm._v("See all authors")]
         )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", [
+      ]),
+      _vm._v(" "),
       _c(
         "form",
         { attrs: { action: "/authors/" + _vm.id + "/alter", method: "POST" } },
@@ -37657,58 +37788,59 @@ var render = function() {
             domProps: { value: _vm.token_value }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "author_name" } }, [_vm._v("Name")]),
+          _c("div", { staticClass: "field" }, [
+            _c("label", { staticClass: "label" }, [_vm._v("Name")]),
             _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                name: "author_name",
-                placeholder: "Enter Name"
-              },
-              domProps: { value: _vm.name }
-            }),
+            _c("div", { staticClass: "control has-icons-left" }, [
+              _c("input", {
+                staticClass: "input",
+                attrs: {
+                  id: "author_name",
+                  name: "author_name",
+                  type: "text",
+                  placeholder: "Author Name",
+                  required: ""
+                },
+                domProps: { value: _vm.name }
+              }),
+              _vm._v(" "),
+              _vm._m(0)
+            ]),
             _vm._v(" "),
             _vm.errors.author_name
               ? _c(
                   "div",
                   _vm._l(_vm.errors.author_name, function(error_message) {
-                    return _c(
-                      "small",
-                      {
-                        staticClass: "form-text text-danger",
-                        attrs: { id: "passwordHelpBlock" }
-                      },
-                      [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t\t" +
-                            _vm._s(error_message) +
-                            "\n\t\t\t\t\t\t"
-                        )
-                      ]
-                    )
+                    return _c("p", { staticClass: "help is-danger" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(error_message) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ])
                   }),
                   0
                 )
               : _vm._e()
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "author_description" } }, [
-              _vm._v("Description")
-            ]),
+          _c("div", { staticClass: "field" }, [
+            _c("label", { staticClass: "label" }, [_vm._v("Description")]),
             _vm._v(" "),
-            _c("textarea", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                name: "author_description",
-                placeholder: "Enter Description",
-                rows: "10"
-              },
-              domProps: { value: _vm.description }
-            }),
+            _c("div", { staticClass: "control" }, [
+              _c("textarea", {
+                staticClass: "textarea",
+                attrs: {
+                  id: "author_name",
+                  name: "author_description",
+                  type: "text",
+                  placeholder: "Author Description",
+                  rows: "10",
+                  required: ""
+                },
+                domProps: { value: _vm.description }
+              })
+            ]),
             _vm._v(" "),
             _vm.errors.author_description
               ? _c(
@@ -37716,37 +37848,49 @@ var render = function() {
                   _vm._l(_vm.errors.author_description, function(
                     error_message
                   ) {
-                    return _c(
-                      "small",
-                      {
-                        staticClass: "form-text text-danger",
-                        attrs: { id: "passwordHelpBlock" }
-                      },
-                      [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t\t" +
-                            _vm._s(error_message) +
-                            "\n\t\t\t\t\t\t"
-                        )
-                      ]
-                    )
+                    return _c("p", { staticClass: "help is-danger" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(error_message) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ])
                   }),
                   0
                 )
               : _vm._e()
           ]),
           _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
-          )
+          _vm._m(1)
         ]
       )
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small is-left" }, [
+      _c("i", { staticClass: "fas fa-user" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c(
+          "button",
+          { staticClass: "button is-link", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37769,77 +37913,82 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [_vm._v(" Authors ")]),
+    _c("div", { staticClass: "tile is-parent" }, [
+      _c("article", { staticClass: "tile is-child is-info is-11" }, [
+        _c("h2", { staticClass: "title is-2" }, [_vm._v("Authors")]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            on: {
-              click: function($event) {
-                return _vm.refresh()
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas  fa-refresh" }), _vm._v("Reload Data")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            attrs: { href: "/authors/add" }
-          },
-          [_vm._v("Add new")]
-        )
+        _vm.loading
+          ? _c("div", [_vm._v("\n  \t\tLOADING\n  \t")])
+          : _c("div", [
+              _c("div", { staticClass: "content" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "button is-primary",
+                    on: {
+                      click: function($event) {
+                        return _vm.refresh()
+                      }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "fas  fa-refresh" }),
+                    _vm._v("Reload Data")
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button is-success",
+                    attrs: { href: "/authors/add" }
+                  },
+                  [_vm._v("Add new")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table table is-fullwidth" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tfoot",
+                  _vm._l(_vm.authors, function(author) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(author.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(author.description))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button",
+                            on: {
+                              click: function($event) {
+                                return _vm.delete_author(author.id)
+                              }
+                            }
+                          },
+                          [_vm._m(1, true)]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button",
+                            attrs: { href: "/authors/" + author.id + "/edit" }
+                          },
+                          [_vm._m(2, true)]
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
       ])
-    ]),
-    _vm._v(" "),
-    _vm.loading
-      ? _c("div", [_vm._v("\n  \t\tLOADING\n  \t")])
-      : _c("div", [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.authors, function(author) {
-                return _c("tr", [
-                  _c("td", [_vm._v(_vm._s(author.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(author.description))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn brn-primary btn-sm",
-                        on: {
-                          click: function($event) {
-                            return _vm.delete_author(author.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-trash" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-sm",
-                        attrs: { href: "/authors/" + author.id + "/edit" }
-                      },
-                      [_c("i", { staticClass: "fas fa-edit" })]
-                    )
-                  ])
-                ])
-              }),
-              0
-            )
-          ])
-        ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -37855,6 +38004,22 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Actions")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small" }, [
+      _c("i", { staticClass: "fas fa-trash" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small" }, [
+      _c("i", { staticClass: "fas fa-edit" })
     ])
   }
 ]
@@ -37879,133 +38044,147 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [_vm._v(" Add Book ")]),
-        _vm._v(" "),
+  return _c("div", { staticClass: "tile is-parent" }, [
+    _c("article", { staticClass: "tile is-child is-info is-6" }, [
+      _c("h2", { staticClass: "title is-2" }, [_vm._v("Add Book")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
         _c(
           "a",
-          { staticClass: "btn btn-primary btn-sm", attrs: { href: "/books" } },
+          { staticClass: "button is-success", attrs: { href: "/books" } },
           [_vm._v("See all Books")]
         )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", [
+      ]),
+      _vm._v(" "),
       _c("form", { attrs: { action: "/books/store", method: "POST" } }, [
         _c("input", {
           attrs: { type: "hidden", name: "_token" },
           domProps: { value: _vm.token_value }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "book_title" } }, [_vm._v("Title")]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Title")]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "book_title",
-              placeholder: "Enter Title"
-            }
-          }),
+          _vm._m(0),
           _vm._v(" "),
           _vm.errors.book_title
             ? _c(
                 "div",
                 _vm._l(_vm.errors.book_title, function(error_message) {
-                  return _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-danger",
-                      attrs: { id: "passwordHelpBlock" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
-                          _vm._s(error_message) +
-                          "\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
+                  return _c("p", { staticClass: "help is-danger" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" + _vm._s(error_message) + "\n\t\t\t\t\t"
+                    )
+                  ])
                 }),
                 0
               )
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "book_author" } }, [_vm._v("Author")]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Author")]),
           _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "form-control",
-              attrs: { name: "book_author", id: "book_author" }
-            },
-            [
-              _c("option", { domProps: { value: 0 } }),
-              _vm._v(" "),
-              _vm._l(_vm.authors, function(author) {
-                return _c("option", { domProps: { value: author.id } }, [
-                  _vm._v(_vm._s(author.name))
-                ])
-              })
-            ],
-            2
-          )
+          _c("div", { staticClass: "control" }, [
+            _c("div", { staticClass: "select" }, [
+              _c(
+                "select",
+                { attrs: { name: "book_author", id: "book_author" } },
+                [
+                  _c("option", { domProps: { value: null } }),
+                  _vm._v(" "),
+                  _vm._l(_vm.authors, function(author) {
+                    return _c("option", { domProps: { value: author.id } }, [
+                      _vm._v(_vm._s(author.name))
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "book_description" } }, [
-            _vm._v("Description")
-          ]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Description")]),
           _vm._v(" "),
-          _c("textarea", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "book_description",
-              placeholder: "Enter Description",
-              rows: "10"
-            }
-          }),
+          _vm._m(1),
           _vm._v(" "),
           _vm.errors.book_description
             ? _c(
                 "div",
                 _vm._l(_vm.errors.book_description, function(error_message) {
-                  return _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-danger",
-                      attrs: { id: "passwordHelpBlock" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
-                          _vm._s(error_message) +
-                          "\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
+                  return _c("p", { staticClass: "help is-danger" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" + _vm._s(error_message) + "\n\t\t\t\t\t"
+                    )
+                  ])
                 }),
                 0
               )
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Submit")]
-        )
+        _vm._m(2)
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control has-icons-left" }, [
+      _c("input", {
+        staticClass: "input",
+        attrs: {
+          id: "book_title",
+          name: "book_title",
+          type: "text",
+          placeholder: "Book Title",
+          required: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "icon is-small is-left" }, [
+        _c("i", { staticClass: "fas fa-book" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control" }, [
+      _c("textarea", {
+        staticClass: "textarea",
+        attrs: {
+          id: "book_description",
+          name: "book_description",
+          type: "text",
+          placeholder: "Enter Description",
+          rows: "10",
+          required: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c(
+          "button",
+          { staticClass: "button is-link", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38027,232 +38206,268 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.fetched
-    ? _c("div", [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "wrapper" }, [
-            _c("h3", [
-              _vm._v(" Edit book: "),
-              _vm.book
-                ? _c("div", [
-                    _vm._v(_vm._s(_vm.book.name) + " (" + _vm._s(_vm.id) + ")")
-                  ])
-                : _vm._e()
+  return _c("div", { staticClass: "tile is-parent" }, [
+    _c("article", { staticClass: "tile is-child is-info is-6" }, [
+      _vm.fetched
+        ? _c("div", {}, [
+            _vm.book
+              ? _c("h2", { staticClass: "title is-2" }, [
+                  _vm._v(
+                    "EditBook: " +
+                      _vm._s(_vm.book.name) +
+                      " (" +
+                      _vm._s(_vm.id) +
+                      ")"
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "content" }, [
+              _c(
+                "a",
+                { staticClass: "button is-success", attrs: { href: "/books" } },
+                [_vm._v("See all Books")]
+              )
             ]),
             _vm._v(" "),
             _c(
-              "a",
+              "form",
               {
-                staticClass: "btn btn-primary btn-sm",
-                attrs: { href: "/books" }
+                attrs: { action: "/books/" + _vm.id + "/alter", method: "POST" }
               },
-              [_vm._v("See all books")]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "form",
-            {
-              attrs: { action: "/books/" + _vm.id + "/alter", method: "POST" }
-            },
-            [
-              _c("input", {
-                attrs: { type: "hidden", name: "_token" },
-                domProps: { value: _vm.token_value }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "book_title" } }, [
-                  _vm._v("Title")
-                ]),
-                _vm._v(" "),
+              [
                 _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "book_title",
-                    placeholder: "Enter Title"
-                  },
-                  domProps: { value: _vm.book.name }
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.token_value }
                 }),
                 _vm._v(" "),
-                _vm.errors.book_title
-                  ? _c(
-                      "div",
-                      _vm._l(_vm.errors.book_title, function(error_message) {
-                        return _c(
-                          "small",
-                          {
-                            staticClass: "form-text text-danger",
-                            attrs: { id: "passwordHelpBlock" }
-                          },
-                          [
+                _c("div", { staticClass: "field" }, [
+                  _c("label", { staticClass: "label" }, [_vm._v("Title")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control has-icons-left" }, [
+                    _c("input", {
+                      staticClass: "input",
+                      attrs: {
+                        id: "book_title",
+                        name: "book_title",
+                        type: "text",
+                        placeholder: "Book Title",
+                        required: ""
+                      },
+                      domProps: { value: _vm.book.name }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ]),
+                  _vm._v(" "),
+                  _vm.errors.book_title
+                    ? _c(
+                        "div",
+                        _vm._l(_vm.errors.book_title, function(error_message) {
+                          return _c("p", { staticClass: "help is-danger" }, [
                             _vm._v(
                               "\n\t\t\t\t\t\t\t" +
                                 _vm._s(error_message) +
                                 "\n\t\t\t\t\t\t"
                             )
-                          ]
-                        )
-                      }),
-                      0
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "book_author" } }, [
-                  _vm._v("Author")
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "book_author", id: "book_author" },
-                    domProps: { value: _vm.book.author_id }
-                  },
-                  [
-                    _c("option", { domProps: { value: null } }),
-                    _vm._v(" "),
-                    _vm._l(_vm.authors, function(author) {
-                      return _c("option", { domProps: { value: author.id } }, [
-                        _vm._v(_vm._s(author.name))
-                      ])
-                    })
-                  ],
-                  2
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "tags_select" } }, [
-                  _vm._v("Tags")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    staticClass: "form-control",
-                    attrs: { name: "tags_select", id: "tags_select" },
-                    on: {
-                      change: function($event) {
-                        return _vm.addTag($event)
-                      }
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "0" } }),
-                    _vm._v(" "),
-                    _vm._l(_vm.tags, function(tag) {
-                      return _c(
-                        "option",
+                _c("div", { staticClass: "field" }, [
+                  _c("label", { staticClass: "label" }, [_vm._v("Author")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control has-icons-left" }, [
+                    _c("div", { staticClass: "select" }, [
+                      _c(
+                        "select",
                         {
-                          attrs: { type: "submit" },
-                          domProps: { value: tag.id }
+                          attrs: { name: "book_author", id: "book_author" },
+                          domProps: { value: _vm.book.author_id }
                         },
                         [
-                          _c("button", { attrs: { type: "submit" } }, [
-                            _vm._v(_vm._s(tag.name))
-                          ])
-                        ]
-                      )
-                    })
-                  ],
-                  2
-                ),
+                          _c("option", { domProps: { value: null } }),
+                          _vm._v(" "),
+                          _vm._l(_vm.authors, function(author) {
+                            return _c(
+                              "option",
+                              { domProps: { value: author.id } },
+                              [_vm._v(_vm._s(author.name))]
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1)
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _c("small", [_vm._v("Tags are saved on the spot!")]),
-                _vm._v(" "),
-                _vm.book
-                  ? _c(
-                      "div",
-                      _vm._l(_vm.book.tags, function(tag) {
-                        return _c(
-                          "span",
-                          {
-                            staticClass: "badge badge-warning",
-                            attrs: { title: tag.description }
-                          },
-                          [
-                            _vm._v("\n\t\t\t\t\t\t\t" + _vm._s(tag.name) + " "),
-                            _c(
-                              "button",
+                _c("div", { staticClass: "field" }, [
+                  _c("label", { staticClass: "label" }, [_vm._v("Tags")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control has-icons-left " }, [
+                    _c("div", { staticClass: "select" }, [
+                      _c(
+                        "select",
+                        {
+                          attrs: { name: "book_tags", id: "book_tags" },
+                          on: {
+                            change: function($event) {
+                              return _vm.addTag($event)
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "null" } }),
+                          _vm._v(" "),
+                          _vm._l(_vm.tags, function(tag) {
+                            return _c(
+                              "option",
                               {
-                                staticClass: "btn btn-sm btn-danger ",
-                                attrs: { type: "button" },
+                                attrs: { type: "submit" },
+                                domProps: { value: tag.id }
+                              },
+                              [_vm._v(_vm._s(tag.name))]
+                            )
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _vm._m(2)
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "help is-info" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\tTags are saved on the spot. You don't need to save anything!\n\t\t\t\t\t"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm.book
+                    ? _c(
+                        "div",
+                        _vm._l(_vm.book.tags, function(tag) {
+                          return _c(
+                            "span",
+                            {
+                              staticClass: "tag is-warning",
+                              attrs: { title: tag.description }
+                            },
+                            [
+                              _vm._v(
+                                "\n\t\t\t\t\t\t  " +
+                                  _vm._s(tag.name) +
+                                  "\n\t\t\t\t\t\t  "
+                              ),
+                              _c("button", {
+                                staticClass: "delete is-small",
                                 on: {
                                   click: function($event) {
                                     return _vm.removeTag(tag.id)
                                   }
                                 }
-                              },
-                              [_vm._v("x")]
-                            )
-                          ]
-                        )
-                      }),
-                      0
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "book_description" } }, [
-                  _vm._v("Description")
+                              })
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
-                _c("textarea", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "book_description",
-                    placeholder: "Enter Description",
-                    rows: "10"
-                  },
-                  domProps: { value: _vm.book.description }
-                }),
-                _vm._v(" "),
-                _vm.errors.book_description
-                  ? _c(
-                      "div",
-                      _vm._l(_vm.errors.book_description, function(
-                        error_message
-                      ) {
-                        return _c(
-                          "small",
-                          {
-                            staticClass: "form-text text-danger",
-                            attrs: { id: "passwordHelpBlock" }
-                          },
-                          [
+                _c("div", { staticClass: "field" }, [
+                  _c("label", { staticClass: "label" }, [
+                    _vm._v("Description")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "control" }, [
+                    _c("textarea", {
+                      staticClass: "textarea",
+                      attrs: {
+                        id: "book_description",
+                        name: "book_description",
+                        type: "text",
+                        placeholder: "Enter Description",
+                        rows: "10",
+                        required: ""
+                      },
+                      domProps: { value: _vm.book.description }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _vm.errors.book_description
+                    ? _c(
+                        "div",
+                        _vm._l(_vm.errors.book_description, function(
+                          error_message
+                        ) {
+                          return _c("p", { staticClass: "help is-danger" }, [
                             _vm._v(
                               "\n\t\t\t\t\t\t\t" +
                                 _vm._s(error_message) +
                                 "\n\t\t\t\t\t\t"
                             )
-                          ]
-                        )
-                      }),
-                      0
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                [_vm._v("Submit")]
-              )
-            ]
-          )
-        ])
-      ])
-    : _c("div", [_vm._v("\n\t\tLoading\n\t")])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _vm._m(3)
+              ]
+            )
+          ])
+        : _c("div", [_vm._v("\n\t\t\tLoading\n\t\t")])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small is-left" }, [
+      _c("i", { staticClass: "fas fa-book" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small is-left" }, [
+      _c("i", { staticClass: "fas fa-pen" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small is-left" }, [
+      _c("i", { staticClass: "fas fa-tag" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c(
+          "button",
+          { staticClass: "button is-link", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38275,107 +38490,112 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [_vm._v(" Books ")]),
+    _c("div", { staticClass: "tile is-parent" }, [
+      _c("article", { staticClass: "tile is-child is-info is-11" }, [
+        _c("h2", { staticClass: "title is-2" }, [_vm._v("Books")]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            on: {
-              click: function($event) {
-                return _vm.refresh()
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas  fa-refresh" }), _vm._v("Reload Data")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            attrs: { href: "/books/add" }
-          },
-          [_vm._v("Add new")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm.loading
-      ? _c("div", [_vm._v("\n\t  \t\tLOADING\n\t  \t")])
-      : _c("div", { staticClass: "table-responsive" }, [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.books, function(book) {
-                return _c("tr", [
-                  _c("td", [_vm._v("TODO")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(book.name))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    book.author
-                      ? _c(
-                          "span",
+        _vm.loading
+          ? _c("div", [_vm._v("\n\t  \t\tLOADING\n\t  \t")])
+          : _c("div", [
+              _c("div", { staticClass: "content" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "button is-primary",
+                    on: {
+                      click: function($event) {
+                        return _vm.refresh()
+                      }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa-refresh" }),
+                    _vm._v("Reload Data")
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button is-success",
+                    attrs: { href: "/books/add" }
+                  },
+                  [_vm._v("Add new")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table table is-fullwidth" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tfoot",
+                  _vm._l(_vm.books, function(book) {
+                    return _c("tr", [
+                      _c("td", [_vm._v("TODO")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(book.name))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        book.author
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "tag is-primary",
+                                attrs: { title: book.author.description }
+                              },
+                              [_vm._v(_vm._s(book.author.name))]
+                            )
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        _vm._l(book.tags, function(tag) {
+                          return _c(
+                            "span",
+                            {
+                              staticClass: "tag is-warning",
+                              attrs: { title: tag.description }
+                            },
+                            [_vm._v(_vm._s(tag.name))]
+                          )
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(book.description))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
                           {
-                            staticClass: "badge badge-info",
-                            attrs: { title: book.author.description }
+                            staticClass: "button",
+                            on: {
+                              click: function($event) {
+                                return _vm.delete_book(book.id)
+                              }
+                            }
                           },
-                          [_vm._v(_vm._s(book.author.name))]
+                          [_vm._m(1, true)]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button",
+                            attrs: { href: "/books/" + book.id + "/edit" }
+                          },
+                          [_vm._m(2, true)]
                         )
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    _vm._l(book.tags, function(tag) {
-                      return _c(
-                        "span",
-                        {
-                          staticClass: "badge badge-warning",
-                          attrs: { title: tag.description }
-                        },
-                        [_vm._v(_vm._s(tag.name))]
-                      )
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(book.description))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn brn-primary btn-sm",
-                        on: {
-                          click: function($event) {
-                            return _vm.delete_book(book.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-trash" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-sm",
-                        attrs: { href: "/books/" + book.id + "/edit" }
-                      },
-                      [_c("i", { staticClass: "fas fa-edit" })]
-                    )
-                  ])
-                ])
-              }),
-              0
-            )
-          ])
-        ])
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -38397,6 +38617,22 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Action")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small" }, [
+      _c("i", { staticClass: "fas fa-trash" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small" }, [
+      _c("i", { staticClass: "fas fa-edit" })
     ])
   }
 ]
@@ -38421,107 +38657,124 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [_vm._v(" Add Tag ")]),
+  return _c("div", { staticClass: "tile is-parent" }, [
+    _c("article", { staticClass: "tile is-child is-info is-11" }, [
+      _c("div", { staticClass: "content" }, [
+        _c("h2", { staticClass: "title is-2" }, [_vm._v("Add Tag")]),
         _vm._v(" "),
         _c(
           "a",
-          { staticClass: "btn btn-primary btn-sm", attrs: { href: "/tags" } },
+          { staticClass: "button is-success", attrs: { href: "/tags/" } },
           [_vm._v("See all tags")]
         )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", [
+      ]),
+      _vm._v(" "),
       _c("form", { attrs: { action: "/tags/store", method: "POST" } }, [
         _c("input", {
           attrs: { type: "hidden", name: "_token" },
           domProps: { value: _vm.token_value }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "tag_name" } }, [_vm._v("Name")]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Name")]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "tag_name", placeholder: "Enter Name" }
-          }),
+          _vm._m(0),
           _vm._v(" "),
           _vm.errors.tag_name
             ? _c(
                 "div",
                 _vm._l(_vm.errors.tag_name, function(error_message) {
-                  return _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-danger",
-                      attrs: { id: "passwordHelpBlock" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
-                          _vm._s(error_message) +
-                          "\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
+                  return _c("p", { staticClass: "help is-danger" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" + _vm._s(error_message) + "\n\t\t\t\t\t"
+                    )
+                  ])
                 }),
                 0
               )
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "tag_description" } }, [
-            _vm._v("Description")
-          ]),
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Description")]),
           _vm._v(" "),
-          _c("textarea", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              name: "tag_description",
-              placeholder: "Enter Description",
-              rows: "10"
-            }
-          }),
+          _vm._m(1),
           _vm._v(" "),
           _vm.errors.tag_description
             ? _c(
                 "div",
                 _vm._l(_vm.errors.tag_description, function(error_message) {
-                  return _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-danger",
-                      attrs: { id: "passwordHelpBlock" }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t" +
-                          _vm._s(error_message) +
-                          "\n\t\t\t\t\t\t"
-                      )
-                    ]
-                  )
+                  return _c("p", { staticClass: "help is-danger" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t" + _vm._s(error_message) + "\n\t\t\t\t\t"
+                    )
+                  ])
                 }),
                 0
               )
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Submit")]
-        )
+        _vm._m(2)
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control has-icons-left" }, [
+      _c("input", {
+        staticClass: "input",
+        attrs: {
+          id: "tag_name",
+          name: "tag_name",
+          type: "text",
+          placeholder: "Tag Name",
+          required: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "icon is-small is-left" }, [
+        _c("i", { staticClass: "fas fa-user" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "control" }, [
+      _c("textarea", {
+        staticClass: "textarea",
+        attrs: {
+          id: "tag_description",
+          name: "tag_description",
+          type: "text",
+          placeholder: "Enter Description",
+          rows: "10",
+          required: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c(
+          "button",
+          { staticClass: "button is-link", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38543,24 +38796,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [
-          _vm._v(
-            " Edit tag: " + _vm._s(_vm.name) + " (" + _vm._s(_vm.id) + ") "
-          )
-        ]),
-        _vm._v(" "),
+  return _c("div", { staticClass: "tile is-parent" }, [
+    _c("article", { staticClass: "tile is-child is-info is-11" }, [
+      _c("h2", { staticClass: "title is-2" }, [
+        _vm._v("Edit tag: " + _vm._s(_vm.name) + " (" + _vm._s(_vm.id) + ")")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
         _c(
           "a",
-          { staticClass: "btn btn-primary btn-sm", attrs: { href: "/tags" } },
+          { staticClass: "button is-success", attrs: { href: "/tags/" } },
           [_vm._v("See all tags")]
         )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", [
+      ]),
+      _vm._v(" "),
       _c(
         "form",
         { attrs: { action: "/tags/" + _vm.id + "/alter", method: "POST" } },
@@ -38570,94 +38819,107 @@ var render = function() {
             domProps: { value: _vm.token_value }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "tag_name" } }, [_vm._v("Name")]),
+          _c("div", { staticClass: "field" }, [
+            _c("label", { staticClass: "label" }, [_vm._v("Name")]),
             _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                name: "tag_name",
-                placeholder: "Enter Name"
-              },
-              domProps: { value: _vm.name }
-            }),
+            _c("div", { staticClass: "control has-icons-left" }, [
+              _c("input", {
+                staticClass: "input",
+                attrs: {
+                  id: "tag_name",
+                  name: "tag_name",
+                  type: "text",
+                  placeholder: "Tag Name",
+                  required: ""
+                },
+                domProps: { value: _vm.name }
+              }),
+              _vm._v(" "),
+              _vm._m(0)
+            ]),
             _vm._v(" "),
             _vm.errors.tag_name
               ? _c(
                   "div",
                   _vm._l(_vm.errors.tag_name, function(error_message) {
-                    return _c(
-                      "small",
-                      {
-                        staticClass: "form-text text-danger",
-                        attrs: { id: "passwordHelpBlock" }
-                      },
-                      [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t\t" +
-                            _vm._s(error_message) +
-                            "\n\t\t\t\t\t\t"
-                        )
-                      ]
-                    )
+                    return _c("p", { staticClass: "help is-danger" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(error_message) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ])
                   }),
                   0
                 )
               : _vm._e()
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "tag_description" } }, [
-              _vm._v("Description")
-            ]),
+          _c("div", { staticClass: "field" }, [
+            _c("label", { staticClass: "label" }, [_vm._v("Description")]),
             _vm._v(" "),
-            _c("textarea", {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                name: "tag_description",
-                placeholder: "Enter Description",
-                rows: "10"
-              },
-              domProps: { value: _vm.description }
-            }),
+            _c("div", { staticClass: "control" }, [
+              _c("textarea", {
+                staticClass: "textarea",
+                attrs: {
+                  id: "tag_description",
+                  name: "tag_description",
+                  type: "text",
+                  placeholder: "Enter Description",
+                  rows: "10",
+                  required: ""
+                },
+                domProps: { value: _vm.description }
+              })
+            ]),
             _vm._v(" "),
             _vm.errors.tag_description
               ? _c(
                   "div",
                   _vm._l(_vm.errors.tag_description, function(error_message) {
-                    return _c(
-                      "small",
-                      {
-                        staticClass: "form-text text-danger",
-                        attrs: { id: "passwordHelpBlock" }
-                      },
-                      [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t\t" +
-                            _vm._s(error_message) +
-                            "\n\t\t\t\t\t\t"
-                        )
-                      ]
-                    )
+                    return _c("p", { staticClass: "help is-danger" }, [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(error_message) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ])
                   }),
                   0
                 )
               : _vm._e()
           ]),
           _vm._v(" "),
-          _c(
-            "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
-          )
+          _vm._m(1)
         ]
       )
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small is-left" }, [
+      _c("i", { staticClass: "fas fa-user" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field is-grouped" }, [
+      _c("div", { staticClass: "control" }, [
+        _c(
+          "button",
+          { staticClass: "button is-link", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38680,77 +38942,82 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "wrapper" }, [
-        _c("h3", [_vm._v(" Tags ")]),
+    _c("div", { staticClass: "tile is-parent" }, [
+      _c("article", { staticClass: "tile is-child is-info is-11" }, [
+        _c("h2", { staticClass: "title is-2" }, [_vm._v("Tags")]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            on: {
-              click: function($event) {
-                return _vm.refresh()
-              }
-            }
-          },
-          [_c("i", { staticClass: "fas  fa-refresh" }), _vm._v("Reload Data")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-primary btn-sm",
-            attrs: { href: "/tags/add" }
-          },
-          [_vm._v("Add new")]
-        )
+        _vm.loading
+          ? _c("div", [_vm._v("\n\t  \t\tLOADING\n\t  \t")])
+          : _c("div", [
+              _c("div", { staticClass: "content" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "button is-primary",
+                    on: {
+                      click: function($event) {
+                        return _vm.refresh()
+                      }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa-refresh" }),
+                    _vm._v("Reload Data")
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button is-success",
+                    attrs: { href: "/tags/add" }
+                  },
+                  [_vm._v("Add new")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table table is-fullwidth" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tfoot",
+                  _vm._l(_vm.tags, function(tag) {
+                    return _c("tr", [
+                      _c("td", [_vm._v(_vm._s(tag.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(tag.description))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button",
+                            on: {
+                              click: function($event) {
+                                return _vm.delete_tag(tag.id)
+                              }
+                            }
+                          },
+                          [_vm._m(1, true)]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "button",
+                            attrs: { href: "/tags/" + tag.id + "/edit" }
+                          },
+                          [_vm._m(2, true)]
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
       ])
-    ]),
-    _vm._v(" "),
-    _vm.loading
-      ? _c("div", [_vm._v("\n  \t\tLOADING\n  \t")])
-      : _c("div", [
-          _c("table", { staticClass: "table" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.tags, function(tag) {
-                return _c("tr", [
-                  _c("td", [_vm._v(_vm._s(tag.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(tag.description))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn brn-primary btn-sm",
-                        on: {
-                          click: function($event) {
-                            return _vm.delete_tag(tag.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-trash" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-sm",
-                        attrs: { href: "/tags/" + tag.id + "/edit" }
-                      },
-                      [_c("i", { staticClass: "fas fa-edit" })]
-                    )
-                  ])
-                ])
-              }),
-              0
-            )
-          ])
-        ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -38766,6 +39033,22 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Actions")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small" }, [
+      _c("i", { staticClass: "fas fa-trash" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon is-small" }, [
+      _c("i", { staticClass: "fas fa-edit" })
     ])
   }
 ]
@@ -51604,10 +51887,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/bulma.sass":
+/*!***********************************!*\
+  !*** ./resources/sass/bulma.sass ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -51627,14 +51910,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/custom.scss ***!
-  \******************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/bulma.sass ./resources/sass/custom.scss ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /repos/updivision-library/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /repos/updivision-library/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /repos/updivision-library/resources/sass/bulma.sass */"./resources/sass/bulma.sass");
 module.exports = __webpack_require__(/*! /repos/updivision-library/resources/sass/custom.scss */"./resources/sass/custom.scss");
 
 

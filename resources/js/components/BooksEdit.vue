@@ -1,63 +1,96 @@
 <template>
-	<div v-if = "fetched">
-		<div class="container-fluid">
-			<div class='wrapper'>
-				<h3> Edit book: <div v-if="book" >{{ book.name }} ({{ id }})</div> </h3>
-				<a class="btn btn-primary btn-sm" v-bind:href="'/books'">See all books</a>
-	  		</div>
-  		</div>
-		<div>
+	<div class="tile is-parent">
+        <article class="tile is-child is-info is-6">
+		<div v-if = "fetched" class="">
+			<h2 class="title is-2" v-if="book" >EditBook: {{ book.name }} ({{ id }})</h2>
+			<div class = "content">
+				<a class="button is-success" v-bind:href="'/books'">See all Books</a>
+			</div>
 			<form :action="'/books/'+id+'/alter'" method="POST">
 				<input type="hidden" name="_token" :value="token_value">
-				<!-- <input type="hidden" name="_token" value="57bZor8XBdKGxQjjgnKJvxmUHu2WKqlWp4Z6bmkb"> -->
-				<div class="form-group">
-					<label for="book_title">Title</label>
-					<input type="text" name = "book_title" class="form-control" placeholder="Enter Title" :value=book.name>
-					<div v-if = "errors.book_title" >
-						<small v-for = "error_message in errors.book_title" id="passwordHelpBlock" class="form-text text-danger">
+
+				<div class="field">
+			        <label class="label">Title</label>
+			        <div class="control has-icons-left">
+			            <input id="book_title" name="book_title" class="input" type="text" placeholder="Book Title" :value=book.name required>
+			            <span class="icon is-small is-left">
+			                <i class="fas fa-book"></i>
+			            </span>
+			        </div>
+			        <div v-if = "errors.book_title" >
+						<p class="help is-danger" v-for = "error_message in errors.book_title">
 							{{ error_message }}
-						</small>
+						</p>
 					</div>
 				</div>
-				<div class="form-group">
-				    <label for="book_author">Author</label>
-				    <select name = "book_author" class="form-control" id="book_author" :value=book.author_id>
-				    	<option :value=null></option>
-						<option v-for="author in authors" :value=author.id>{{ author.name }}</option>
-					</select>
+
+				<div class="field">
+				  <label class="label">Author</label>
+				  <div class="control has-icons-left">
+				    <div class="select">
+						<select name = "book_author" id="book_author" :value=book.author_id>
+							<option :value=null></option>
+							<option v-for="author in authors" :value=author.id>{{ author.name }}</option>
+						</select>
+						<span class="icon is-small is-left">
+			                <i class="fas fa-pen"></i>
+			            </span>
+				    </div>
+				  </div>
 				</div>
-				<div class="form-group">
-					<label for="tags_select">Tags</label>
-				    <select name = "tags_select" class="form-control" id="tags_select" @change="addTag($event)">
-				       <option value=0></option>
-					   <option v-for="tag in tags" :value=tag.id type=submit><button type=submit>{{ tag.name }}</button></option>
-					</select>
-					<small>Tags are saved on the spot!</small>
-					<div v-if = "book">
-						<span v-for = "tag in book.tags" :title ="tag.description"  class="badge badge-warning">
-							{{ tag.name }} <button class="btn btn-sm btn-danger " @click="removeTag( tag.id )" type=button>x</button>
+
+				<div class="field">
+				  <label class="label">Tags</label>
+				  <div class="control has-icons-left ">
+				    <div class="select">
+						<select name = "book_tags" id="book_tags"  @change="addTag($event)">
+							<option value=null></option>
+							<option v-for="tag in tags" :value=tag.id type=submit>{{ tag.name }}</option>
+						</select>
+						<span class="icon is-small is-left">
+			                <i class="fas fa-tag"></i>
+			            </span>
+				    </div>
+				  </div>
+				  <p class="help is-info">
+						Tags are saved on the spot. You don't need to save anything!
+					</p>
+				  	<div v-if = "book">
+				  		<span :title ="tag.description" v-for = "tag in book.tags" class="tag is-warning">
+						  {{ tag.name }}
+						  <button class="delete is-small" @click="removeTag( tag.id )"></button>
 						</span>
+
 					</div>
 
 				</div>
-				<div class="form-group">
-					<label for="book_description">Description</label>
-					<textarea type="text" name = "book_description" class="form-control" placeholder="Enter Description" rows="10" :value=book.description></textarea>
-					<div v-if = "errors.book_description" >
-						<small v-for = "error_message in errors.book_description" id="passwordHelpBlock" class="form-text text-danger">
+								
+				<div class="field">
+			        <label class="label">Description</label>
+			        <div class="control">
+			            <textarea id="book_description" name = "book_description" class="textarea" type="text" placeholder="Enter Description" rows="10" :value=book.description required></textarea>
+			        </div>
+			        <div v-if = "errors.book_description" >
+						<p class="help is-danger" v-for = "error_message in errors.book_description">
 							{{ error_message }}
-						</small>
+						</p>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+
+
+				<div class="field is-grouped">
+			        <div class="control">
+			            <button type="submit" class="button is-link">Submit</button>
+			        </div>
+			    </div>
 			</form>
 		</div>
-	</div>
-	<div v-else>
-		Loading
-	</div>
+		<div v-else>
+			Loading
+		</div>
+	        </article>
+      </div>
 </template>
-
 <script>
 	export default {
 		props: ['token_value', 'errors_string', 'id'],

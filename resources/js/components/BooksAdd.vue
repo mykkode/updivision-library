@@ -1,45 +1,64 @@
+
 <template>
-	<div>
-		<div class="container-fluid">
-			<div class='wrapper'>
-				<h3> Add Book </h3>
-				<a class="btn btn-primary btn-sm" v-bind:href="'/books'">See all Books</a>
-	  		</div>
-  		</div>
-		<div>
-			<form action="/books/store" method="POST">
-				<input type="hidden" name="_token" :value="token_value">
-				<!-- <input type="hidden" name="_token" value="57bZor8XBdKGxQjjgnKJvxmUHu2WKqlWp4Z6bmkb"> -->
-				<div class="form-group">
-					<label for="book_title">Title</label>
-					<input type="text" name = "book_title" class="form-control" placeholder="Enter Title">
-					<div v-if = "errors.book_title" >
-						<small v-for = "error_message in errors.book_title" id="passwordHelpBlock" class="form-text text-danger">
-							{{ error_message }}
-						</small>
-					</div>
+		<div class="tile is-parent">
+        <article class="tile is-child is-info is-6">
+		<h2 class="title is-2">Add Book</h2>
+		<div class = "content">
+			<a class="button is-success" v-bind:href="'/books'">See all Books</a>
+		</div>
+		<form action="/books/store" method="POST">
+			<input type="hidden" name="_token" :value="token_value">
+			<div class="field">
+		        <label class="label">Title</label>
+		        <div class="control has-icons-left">
+		            <input id="book_title" name="book_title" class="input" type="text" placeholder="Book Title" required>
+		            <span class="icon is-small is-left">
+		                <i class="fas fa-book"></i>
+		            </span>
+		        </div>
+		        <div v-if = "errors.book_title" >
+					<p class="help is-danger" v-for = "error_message in errors.book_title">
+						{{ error_message }}
+					</p>
 				</div>
-				<div class="form-group">
-				    <label for="book_author">Author</label>
-				    <select name = "book_author" class="form-control" id="book_author">
-				    	<option :value=0></option>
+			</div>
+
+			<div class="field">
+			  <label class="label">Author</label>
+			  <div class="control">
+			    <div class="select">
+					<select name = "book_author" id="book_author">
+						<option :value=null></option>
 						<option v-for="author in authors" :value=author.id>{{ author.name }}</option>
 					</select>
+			    </div>
+			  </div>
+			</div>
+							
+			<div class="field">
+		        <label class="label">Description</label>
+		        <div class="control">
+		            <textarea id="book_description" name = "book_description" class="textarea" type="text" placeholder="Enter Description" rows="10" required></textarea>
+		        </div>
+		        <div v-if = "errors.book_description" >
+					<p class="help is-danger" v-for = "error_message in errors.book_description">
+						{{ error_message }}
+					</p>
 				</div>
-				<div class="form-group">
-					<label for="book_description">Description</label>
-					<textarea type="text" name = "book_description" class="form-control" placeholder="Enter Description" rows="10"></textarea>
-					<div v-if = "errors.book_description" >
-						<small v-for = "error_message in errors.book_description" id="passwordHelpBlock" class="form-text text-danger">
-							{{ error_message }}
-						</small>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+			<div class="field is-grouped">
+		        <div class="control">
+		            <button type="submit" class="button is-link">Submit</button>
+		        </div>
+		    </div>
 			</form>
-		</div>
-	</div>
+		        </article>
+      </div>
 </template>
+
+
+
+
 
 <script>
 	import axios from 'axios';

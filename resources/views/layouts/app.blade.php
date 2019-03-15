@@ -15,75 +15,90 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bulma.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{{route('authors')}}">
+                    Authors
+                    </a>
 
-                    </ul>
+                    <a class="navbar-item" href="{{route('books')}}">
+                    Books
+                    </a>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('authors')}}">Authors</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('books')}}">Books</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('tags')}}">Tags</a>
-                                </li>
-                                  <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                    <a class="navbar-item" href="{{route('tags')}}">
+                    Tags
+                    </a>
                 </div>
+                @guest
+                    @if (Route::has('register'))
+                    <div class="navbar-end">
+                      <div class="navbar-item">
+                        <div class="buttons">
+                          <a class="button is-primary" href="{{ route('login') }}">
+                            <strong>{{ __('Login') }}</strong>
+                          </a>
+                          <a class="button is-light" href="{{ route('register') }}">
+                            {{ __('Register') }}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    @endif
+                @else
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                          {{ Auth::user()->first_name }}
+                        </a>
+                        <div class="navbar-dropdown">
+                          <a class="navbar-item">
+                            Manage
+                          </a>
+                          <hr class="navbar-divider">
+                          <a class="navbar-item" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                          </a>
+                        </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                        </form>
+                    </div>
+                @endguest
             </div>
         </nav>
-
-        <main class="py-4">
+        <div class="container">
+          <div class="notification">
             @yield('content')
-        </main>
+          </div>
+        </div>
     </div>
+<div id = "wrapper"></div>
+    <footer class="footer" >
+  <div class="content has-text-centered">
+    <p>
+      <strong>Made</strong> by <a href="https://github.com/">Nedelcescu Radu Costin</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. 
+    </p>
+  </div>
+</footer>
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
