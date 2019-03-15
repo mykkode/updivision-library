@@ -38440,7 +38440,22 @@ var render = function() {
                     : _vm._e()
                 ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _c("div", { staticClass: "file field" }, [
+                  _c("label", { staticClass: "file-label" }, [
+                    _c("input", {
+                      staticClass: "file-input",
+                      attrs: {
+                        id: "book_image",
+                        name: "book_image",
+                        type: "file",
+                        accept: "image/png"
+                      },
+                      domProps: { value: null }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(3)
+                  ])
+                ]),
                 _vm._v(" "),
                 _vm._m(4)
               ]
@@ -38479,27 +38494,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "file field" }, [
-      _c("label", { staticClass: "file-label" }, [
-        _c("input", {
-          staticClass: "file-input",
-          attrs: {
-            id: "book_image",
-            name: "book_image",
-            type: "file",
-            accept: "image/png"
-          }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "file-cta" }, [
-          _c("span", { staticClass: "file-icon" }, [
-            _c("i", { staticClass: "fas fa-upload" })
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "file-label" }, [
-            _vm._v("\n\t\t\t\t        Select Cover\n\t\t\t\t      ")
-          ])
-        ])
+    return _c("span", { staticClass: "file-cta" }, [
+      _c("span", { staticClass: "file-icon" }, [
+        _c("i", { staticClass: "fas fa-upload" })
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "file-label" }, [
+        _vm._v("\n\t\t\t\t        Select Cover\n\t\t\t\t      ")
       ])
     ])
   },

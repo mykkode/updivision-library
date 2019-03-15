@@ -79,7 +79,7 @@
 
 				<div class="file field">
 				  <label class="file-label">
-				    <input id="book_image" name = "book_image" class="file-input" type="file" accept="image/png">
+				    <input id="book_image" name = "book_image" class="file-input" type="file" accept="image/png" :value=null>
 				    <span class="file-cta">
 				      <span class="file-icon">
 				        <i class="fas fa-upload"></i>

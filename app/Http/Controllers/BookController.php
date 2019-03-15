@@ -89,30 +89,21 @@ class BookController extends Controller
             'book_title' => 'required',
             'book_description' => 'required',
             'book_author' => 'nullable|exists:authors,id',
+            'book_image' => 'nullable|image'
            
         ]);
 
-        $name = $request->input('book_image');
-
-
-
-    // if ($request->hasFile('book_image')) {
-    //     $image = $request->file('book_image');
-    //     $name = ;
-    //     $destinationPath = public_path('/images');
-    //     $image->move($destinationPath, $name);
-    // }
-
-        $name = $id.'.'.$request->book_image->getClientOriginalExtension();
-
-        $request->book_image->storeAs('covers', $name, 'public');
-
-
         $book = Book::find($id);
+
+        if($request->book_image) {
+            $name = $id.'.'.$request->book_image->getClientOriginalExtension();
+            $request->book_image->storeAs('covers', $name, 'public');
+            $book->cover_image = $name;
+        }
+        
         $book->name = $request->input('book_title');
         $book->description = $request->input('book_description');
         $book->author_id = $request->input('book_author');
-        $book->cover_image = $name;
         $book->save();
 
         return redirect('books');
