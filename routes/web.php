@@ -17,39 +17,39 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('authors')->group(function () {
-    Route::get('/add', 'AuthorController@add');
-	Route::get('/{id}/edit', 'AuthorController@edit');
-	Route::get('/list', 'AuthorController@list');
-	Route::get('/', 'AuthorController@index')->name('authors');
+    Route::get('/add', 'AuthorController@add')->middleware('auth');
+	Route::get('/{id}/edit', 'AuthorController@edit')->middleware('auth');
+	Route::get('/list', 'AuthorController@list')->middleware('auth');
+	Route::get('/', 'AuthorController@index')->name('authors')->middleware('auth');
 
-	Route::post('/store', 'AuthorController@store');
-	Route::post('/{id}/alter', 'AuthorController@alter');
-	Route::post('/{id}/delete', 'AuthorController@delete');
+	Route::post('/store', 'AuthorController@store')->middleware('auth');
+	Route::post('/{id}/alter', 'AuthorController@alter')->middleware('auth');
+	Route::post('/{id}/delete', 'AuthorController@delete')->middleware('auth');
 });
 
 
 Route::prefix('tags')->group(function () {
-	Route::get('/add', 'TagController@add');
-	Route::get('/{id}/edit', 'TagController@edit');
-	Route::get('/list', 'TagController@list');
-	Route::get('/', 'TagController@index')->name('tags');
+	Route::get('/add', 'TagController@add')->middleware('auth');
+	Route::get('/{id}/edit', 'TagController@edit')->middleware('auth');
+	Route::get('/list', 'TagController@list')->middleware('auth');
+	Route::get('/', 'TagController@index')->name('tags')->middleware('auth');
 
-	Route::post('/store', 'TagController@store');
-	Route::post('/{id}/alter', 'TagController@alter');
-	Route::post('/{id}/delete', 'TagController@delete');
+	Route::post('/store', 'TagController@store')->middleware('auth');
+	Route::post('/{id}/alter', 'TagController@alter')->middleware('auth');
+	Route::post('/{id}/delete', 'TagController@delete')->middleware('auth');
 });
 
 Route::prefix('books')->group(function () {
-	Route::get('/add', 'BookController@add');
-	Route::get('/{id}/edit', 'BookController@edit');
-	Route::get('/list/{id?}', 'BookController@list');
-	Route::get('/bind/{book_id}/{tag_id}', 'BookController@bind');
-	Route::get('/unbind/{book_id}/{tag_id}', 'BookController@unbind');
-	Route::get('/', 'BookController@index')->name('books');
+	Route::get('/add', 'BookController@add')->middleware('auth');
+	Route::get('/{id}/edit', 'BookController@edit')->middleware('auth');
+	Route::get('/list/{id?}', 'BookController@list')->middleware('auth');
+	Route::get('/bind/{book_id}/{tag_id}', 'BookController@bind')->middleware('auth');
+	Route::get('/unbind/{book_id}/{tag_id}', 'BookController@unbind')->middleware('auth');
+	Route::get('/', 'BookController@index')->name('books')->middleware('auth');
 
-	Route::post('/store', 'BookController@store');
-	Route::post('/{id}/alter', 'BookController@alter');
-	Route::post('/{id}/delete', 'BookController@delete');
+	Route::post('/store', 'BookController@store')->middleware('auth');
+	Route::post('/{id}/alter', 'BookController@alter')->middleware('auth');
+	Route::post('/{id}/delete', 'BookController@delete')->middleware('auth');
 });
 
-Route::get('activate/{id}', 'Auth\RegisterController@activate');
+Route::get('activate/{id}', 'Auth\RegisterController@activate')->middleware('auth');
