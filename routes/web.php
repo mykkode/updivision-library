@@ -51,3 +51,5 @@ Route::prefix('books')->group(function () {
 	Route::post('/{id}/alter', 'BookController@alter');
 	Route::post('/{id}/delete', 'BookController@delete');
 });
+
+Route::get('activate/{id}', 'Auth\RegisterController@activate');

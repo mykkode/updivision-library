@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use App\Jobs\SendMail as SendMail;
 class RegisterController extends Controller
 {
     /*
@@ -71,4 +73,44 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function registered(Request $request, $user)
+    {
+        dispatch(new SendMail($request->getHost(), $user));
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        //$this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
+    protected function activate($token)
+    {
+        User::where('token', "=",$token)
+            ->update(['activated' => 1,
+                'token' => null
+            ]);
+        return redirect('home');
+    }
+
 }
