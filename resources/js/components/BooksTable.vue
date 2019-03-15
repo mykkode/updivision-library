@@ -25,7 +25,10 @@
 			  </thead>
 			  <tfoot>
 				<tr v-for = "book in books">
-				  <td>TODO</td>
+				  <td><figure class="image is-128x128">
+					  <img :src="'/storage/covers/'+ book.cover_image">
+					</figure>
+				 </td>
 			      <td>{{ book.name }}</td>
 				  <td>
 					  <span v-if="book.author" :title="book.author.description" class="tag is-primary">{{ book.author.name }}</span>

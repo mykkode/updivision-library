@@ -6,7 +6,7 @@
 			<div class = "content">
 				<a class="button is-success" v-bind:href="'/books'">See all Books</a>
 			</div>
-			<form :action="'/books/'+id+'/alter'" method="POST">
+			<form :action="'/books/'+id+'/alter'" method="POST" enctype="multipart/form-data">
 				<input type="hidden" name="_token" :value="token_value">
 
 				<div class="field">
@@ -77,6 +77,19 @@
 					</div>
 				</div>
 
+				<div class="file field">
+				  <label class="file-label">
+				    <input id="book_image" name = "book_image" class="file-input" type="file" accept="image/png">
+				    <span class="file-cta">
+				      <span class="file-icon">
+				        <i class="fas fa-upload"></i>
+				      </span>
+				      <span class="file-label">
+				        Select Cover
+				      </span>
+				    </span>
+				  </label>
+				</div>
 
 				<div class="field is-grouped">
 			        <div class="control">

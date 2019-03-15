@@ -2185,6 +2185,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token_value', 'errors_string', 'id'],
   data: function data() {
@@ -2256,6 +2269,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -38233,7 +38249,11 @@ var render = function() {
             _c(
               "form",
               {
-                attrs: { action: "/books/" + _vm.id + "/alter", method: "POST" }
+                attrs: {
+                  action: "/books/" + _vm.id + "/alter",
+                  method: "POST",
+                  enctype: "multipart/form-data"
+                }
               },
               [
                 _c("input", {
@@ -38420,7 +38440,9 @@ var render = function() {
                     : _vm._e()
                 ]),
                 _vm._v(" "),
-                _vm._m(3)
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._m(4)
               ]
             )
           ])
@@ -38451,6 +38473,34 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon is-small is-left" }, [
       _c("i", { staticClass: "fas fa-tag" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "file field" }, [
+      _c("label", { staticClass: "file-label" }, [
+        _c("input", {
+          staticClass: "file-input",
+          attrs: {
+            id: "book_image",
+            name: "book_image",
+            type: "file",
+            accept: "image/png"
+          }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "file-cta" }, [
+          _c("span", { staticClass: "file-icon" }, [
+            _c("i", { staticClass: "fas fa-upload" })
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "file-label" }, [
+            _vm._v("\n\t\t\t\t        Select Cover\n\t\t\t\t      ")
+          ])
+        ])
+      ])
     ])
   },
   function() {
@@ -38531,7 +38581,15 @@ var render = function() {
                   "tfoot",
                   _vm._l(_vm.books, function(book) {
                     return _c("tr", [
-                      _c("td", [_vm._v("TODO")]),
+                      _c("td", [
+                        _c("figure", { staticClass: "image is-128x128" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "/storage/covers/" + book.cover_image
+                            }
+                          })
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(book.name))]),
                       _vm._v(" "),
